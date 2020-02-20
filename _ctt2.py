@@ -18,6 +18,8 @@ class Excel:
             else:
                 self.nomes.append(str(self.sh.cell_value(i,0)))
                 self.tel1.append(str(self.sh.cell_value(i,1)))
+                self.nomes[i-1] = self.nomes[i-1].replace('.0','')
+                self.tel1[i-1] = self.tel1[i-1].replace('.0','')
 
     def criarCsv(self):
         csv = scsv(self.nomes, self.tel1)
